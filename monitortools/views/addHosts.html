@@ -1,0 +1,33 @@
+{{template "header"}}
+
+<head>
+
+<body>
+<div class="container" style="width: 500px;">
+    <form class="form-horizontal" method="post" action="/addhosts">
+        <div class="form-group">
+            <label class="col-lg-4 control-label">请输入主机IP地址：</label>
+            <div class="col-lg-6">
+                <input class="form-control" name="hostip" placeholder="hostip">
+            </div>
+
+            <label class="col-lg-4 control-label">请输入主机端口：</label>
+            <div class="col-lg-6">
+                <input class="form-control" name="hostport" placeholder="hostport">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <a href="/addhosts">
+                    <button type="submit" class="btn btn-default">添加</button>
+                </a>
+                <!-- 返回 按钮，会使用beego.Router("/addhosts",&controllers.AddHostsController{}) 的Post方法，
+                这个方法中有重定向，所以页面就会 重定向到主页面-->
+                <button class="btn btn-default">返回</a></button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

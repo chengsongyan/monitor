@@ -1,0 +1,44 @@
+{{template "header"}}
+</head>
+
+<head><meta http-equiv="refresh" content="3"></head>
+<body >
+<div class="navbar navbar-default">
+    <div class="container">
+        {{template "navbar" .}}
+    </div>
+</div>
+
+<div class="container">
+    <div class="page-header">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>主机IP</th>
+                <th>主机端口</th>
+                <th>端口状态</th>
+            </tr>
+            </thead>
+            {{range .HostStatus}}
+
+            <tbody>
+            <tr>
+                <td>{{.Id}}</td>
+                <td>{{.HostIp}}</td>
+                <td>{{.HostPort}}</td>
+                <td>{{.PortStatus}}</td>
+            </tr>
+
+            </tbody>
+            {{end}}
+        </table>
+
+
+    </div>
+</div>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>
+
